@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Box, TextField, Button } from "@mui/material";
-import { login } from "../services/login";
+import { signin } from "../services/signin";
 import logo from "../assets/logo.png";
 
-export default function Login() {
+export default function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [team, setTeam] = useState("");
 
   const handleSubmit = () => {
-    login(email, password);
+    signin(email, password, name, team);
   };
 
   return (
@@ -34,6 +36,26 @@ export default function Login() {
             alignItems: "center",
           }}
         >
+          <TextField
+            type="text"
+            label="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            sx={{
+              width: "25vw",
+              "& label.Mui-focused": {
+                color: "white",
+              },
+              "& .MuiInput-underline:after": {
+                borderBottomColor: "white",
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "white",
+                },
+              },
+            }}
+          />
           <TextField
             type="email"
             label="e-mail"
@@ -74,6 +96,26 @@ export default function Login() {
               },
             }}
           />
+          <TextField
+            type="text"
+            label="Qual é seu time do coração?"
+            value={team}
+            onChange={(e) => setTeam(e.target.value)}
+            sx={{
+              width: "25vw",
+              "& label.Mui-focused": {
+                color: "white",
+              },
+              "& .MuiInput-underline:after": {
+                borderBottomColor: "white",
+              },
+              "& .MuiOutlinedInput-root": {
+                "&.Mui-focused fieldset": {
+                  borderColor: "white",
+                },
+              },
+            }}
+          />
           <Button
             variant="contained"
             onClick={handleSubmit}
@@ -83,7 +125,7 @@ export default function Login() {
               "&:hover": { backgroundColor: "black", color: "white" },
             }}
           >
-            Log-in!
+            Sign-In!
           </Button>
         </Box>
       </section>

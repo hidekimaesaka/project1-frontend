@@ -8,12 +8,13 @@ import CssBaseline from "@mui/material/CssBaseline";
 import DarkTheme from "./styles/theme";
 
 import Login from "./pages/login";
+import Signin from "./pages/sigin"
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider theme={DarkTheme}>
       <CssBaseline />
-      <Login />
+      <Signin></Signin>
     </ThemeProvider>
   </StrictMode>
 );
