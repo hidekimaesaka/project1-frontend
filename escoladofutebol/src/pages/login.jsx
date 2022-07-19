@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, Link } from "@mui/material";
 import { login } from "../services/login";
 import logo from "../assets/logo.png";
 
@@ -22,15 +22,23 @@ export default function Login() {
       }}
     >
       <section className="upper-section" style={{ height: "50vh" }}>
-        <img src={logo} alt="logo" height="300vh" />
+        <img
+          src={logo}
+          alt="logo"
+          height="200vh"
+          style={{ "margin-top": "25vh" }}
+        />
       </section>
-      <section className="lower-section">
+      <section
+        className="lower-section"
+        style={{ diplay: "flex", height: "20vh", gap: "10px" }}
+      >
         <Box
           component="form"
           sx={{
             display: "flex",
             "flex-direction": "column",
-            gap: "10px",
+            gap: "15px",
             alignItems: "center",
           }}
         >
@@ -80,11 +88,24 @@ export default function Login() {
             sx={{
               width: "25vw",
               backgroundColor: "white",
-              "&:hover": { backgroundColor: "black", color: "white" },
+              "&:hover": {
+                backgroundColor: "black",
+                color: "white",
+              },
             }}
           >
             Log-in!
           </Button>
+          <Link
+            href="signin"
+            underline="none"
+            sx={{
+              color: "white",
+              "&:hover": { color: "yellow" },
+            }}
+          >
+            {"Create an account"}
+          </Link>
         </Box>
       </section>
     </div>

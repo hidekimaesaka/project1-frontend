@@ -24,7 +24,12 @@ export default function Signin() {
       }}
     >
       <section className="upper-section" style={{ height: "50vh" }}>
-        <img src={logo} alt="logo" height="300vh" />
+        <img
+          src={logo}
+          alt="logo"
+          height="200vh"
+          style={{ "margin-top": "25vh" }}
+        />
       </section>
       <section className="lower-section">
         <Box
