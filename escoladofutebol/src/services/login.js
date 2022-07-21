@@ -11,5 +11,6 @@ export const login = (email, password) => {
     })
         .then((response) => response.json())
         .then((data) => console.log(data))
+        
 
 }
